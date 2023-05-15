@@ -6,7 +6,7 @@
 /*   By: utente <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:24:35 by utente            #+#    #+#             */
-/*   Updated: 2023/04/03 16:05:19 by utente           ###   ########.fr       */
+/*   Updated: 2023/05/15 10:38:28 by utente           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 static void	reverse_rotate(t_stack_node **stack)
 {
 	t_stack_node	*last;
+	int				len;
 
-	if (NULL == *stack || NULL == stack)
+	len = stack_len(*stack);
+	if (NULL == *stack || NULL == stack || 1 == len)
 		return ;
 	last = find_last_node(*stack);
 	last->prev->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: utente <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 09:53:41 by utente            #+#    #+#             */
-/*   Updated: 2023/04/03 16:40:08 by utente           ###   ########.fr       */
+/*   Updated: 2023/05/15 10:39:35 by utente           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 */
 static void	swap(t_stack_node **head)
 {
-	if (NULL == *head || NULL == head)
+	int	len;
+
+	len = stack_len(*head);
+	if (NULL == *head || NULL == head || 1 == len)
 		return ;
 	*head = (*head)->next;
 	(*head)->prev->prev = *head;
