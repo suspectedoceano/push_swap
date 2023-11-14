@@ -26,7 +26,7 @@ static int	count_words(char *str, char separator)
 	while (*str)
 	{
 		inside_word = false;
-		while (*str == separator)
+		while (*str == separator && *str)
 			++str;
 		while (*str != separator && *str)
 		{
